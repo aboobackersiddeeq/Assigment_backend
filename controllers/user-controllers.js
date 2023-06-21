@@ -14,7 +14,7 @@ module.exports = {
         // Email already exists, send a response indicating failure
         res.json({
           status: "failed",
-          message: "Email already exists. Please login now.",
+          message: "Email already exists.",
         });
       } else {
         let imageUrl;
