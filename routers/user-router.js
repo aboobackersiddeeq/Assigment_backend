@@ -17,6 +17,9 @@ router.post("/get-user", userController.getUser);
 // Route for adding a new user
 router.post("/add-user", userController.addUser);
 
+// Route for delete  user
+router.post("/delete-user", userController.deleteUsers);
+
 // Route for updating the active status of a user
 router.post("/active-user", userController.activeUser);
 
