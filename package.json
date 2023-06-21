@@ -18,7 +18,9 @@
   "version": "1.0.0",
   "description": "MERN stack paractical test",
   "main": "server.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  },
   "author": "Aboobabacker Siddeeque P",
   "license": "ISC"
 }
