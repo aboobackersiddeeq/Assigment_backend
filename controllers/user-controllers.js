@@ -1,11 +1,12 @@
 const User = require("../model/user-schema");
-const { convertToCSV } = require('../utils/convert-to-csv');
+const { convertToCSV } = require("../utils/convert-to-csv");
 
 module.exports = {
   // Add user
   addUser: async (req, res) => {
     try {
-      const { firstName, lastName, email, mobile, gender, status, location } = req.body.values;
+      const { firstName, lastName, email, mobile, gender, status, location } =
+        req.body.values;
       const user = await User.findOne({ email: email });
       const image = req.files.img;
 
@@ -17,12 +18,10 @@ module.exports = {
         });
       } else {
         let imageUrl;
-
         if (image) {
           imageUrl = image[0].path;
           imageUrl = imageUrl.substring(6);
         }
-
         await User.create({
           image: imageUrl,
           firstName,
@@ -89,7 +88,8 @@ module.exports = {
   // Edit user details
   editUsers: async (req, res) => {
     try {
-      const { firstName, lastName, email, mobile, gender, status, location } = req.body.values;
+      const { firstName, lastName, email, mobile, gender, status, location } =
+        req.body.values;
       const id = req.body.id;
       const image = req.files.img;
       let imageUrl;
