@@ -77,6 +77,8 @@ module.exports = {
       const id = req.body.id;
       await User.findByIdAndDelete(id);
       const users = await User.find({});
+      users.reverse();
+
 
       // Send a success response with the remaining users
       res.json({ status: "success", result: users });
